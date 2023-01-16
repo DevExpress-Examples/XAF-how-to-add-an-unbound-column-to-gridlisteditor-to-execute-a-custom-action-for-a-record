@@ -1,69 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5415D459-BDF5-48B1-BE33-53FA9929AB84}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace></RootNamespace>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>WinSolution.Module</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
+    <DefineConstants>DEBUG,TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\EasyTest\</OutputPath>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <DefineConstants>EASYTEST=True</DefineConstants>
+    <DefineConstants>TRACE,DEBUG,EASYTEST</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Printing.v15.1.Core">
-      <Private>True</Private>
+    <Reference Include="DevExpress.Pdf.v22.2.Core">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Data.v15.1">
-      <Private>True</Private>
+    <Reference Include="DevExpress.Office.v22.2.Core">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Xpo.v15.1">
-      <Private>True</Private>
+    <Reference Include="DevExpress.RichEdit.v22.2.Core">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.v15.1">
-      <Private>True</Private>
+    <Reference Include="DevExpress.RichEdit.v22.2.Export">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Objects.v15.1">
-      <Private>True</Private>
+    <Reference Include="DevExpress.Printing.v22.2.Core">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Validation.v15.1">
-      <Private>True</Private>
+    <Reference Include="DevExpress.Drawing.v22.2">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.Base.v15.1">
-      <Private>True</Private>
+    <Reference Include="DevExpress.Data.v22.2">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.v15.1">
-      <Private>True</Private>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v22.2">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v15.1">
-      <Private>True</Private>
+    <Reference Include="DevExpress.ExpressApp.v22.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Objects.v22.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v22.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v22.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.Xpo.v22.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v22.2">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -87,7 +113,7 @@
       <DependentUpon>Module.vb</DependentUpon>
     </Compile>
     <Compile Include="Order.vb" />
-    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Properties\AssemblyInfo.vb" />
     <Compile Include="Updater.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -100,7 +126,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
