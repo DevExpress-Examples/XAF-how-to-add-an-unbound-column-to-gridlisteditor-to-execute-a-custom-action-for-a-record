@@ -18,7 +18,8 @@ Namespace WinSolution.Module.Win
 		Private unboundModelColumn As IModelColumn
 		Private Const ButtonColumnCaption As String = "Action"
 		Private Const ButtonColumnName As String = "UnboundButtonColumn"
-		Private defaultButtonColumnColumnProperties As RepositoryItemButtonEdit
+		Private activeRepositoryItemButtonEdit As RepositoryItemButtonEdit
+		Private inactiveRepositoryItemButtonEdit As RepositoryItemButtonEdit
 		Private activebutton As New EditorButton(ButtonPredefines.OK)
 		Private inactivebutton As New EditorButton(ButtonPredefines.Close)
 		Private gridListEditor As GridListEditor
@@ -69,14 +70,16 @@ Namespace WinSolution.Module.Win
 				buttonColumn.OptionsColumn.FixedWidth = True
 				buttonColumn.OptionsColumn.ShowInCustomizationForm = False
 				buttonColumn.OptionsFilter.AllowFilter = False
-				InitButtonEditor()
+				InitButtonEditor(activeRepositoryItemButtonEdit, True)
+				InitButtonEditor(inactiveRepositoryItemButtonEdit, True)
 			End If
 		End Sub
-		Private Sub InitButtonEditor()
-			defaultButtonColumnColumnProperties = New RepositoryItemButtonEdit()
-			defaultButtonColumnColumnProperties.TextEditStyle = TextEditStyles.HideTextEditor
-			AddHandler defaultButtonColumnColumnProperties.Click, AddressOf buttonColumnColumnProperties_Click
-			gridListEditor.Grid.RepositoryItems.Add(defaultButtonColumnColumnProperties)
+		Private Sub InitButtonEditor(ByRef properties As RepositoryItemButtonEdit, ByVal active As Boolean)
+			properties = New RepositoryItemButtonEdit()
+			properties.TextEditStyle = TextEditStyles.HideTextEditor
+			AddHandler properties.Click, AddressOf buttonColumnColumnProperties_Click
+			UpdateButtons(properties, active)
+			gridListEditor.Grid.RepositoryItems.Add(properties)
 		End Sub
 		Private Sub UpdateButtons(ByVal properties As RepositoryItemButtonEdit, ByVal active As Boolean)
 			Dim button As EditorButton
@@ -96,9 +99,11 @@ Namespace WinSolution.Module.Win
 			If e.Column.FieldName = ButtonColumnName Then
 				Dim order As ISimpleBusinessAction = TryCast(gridListEditor.GridView.GetRow(e.RowHandle), ISimpleBusinessAction)
 				If order IsNot Nothing Then
-					Dim item As RepositoryItemButtonEdit = TryCast(defaultButtonColumnColumnProperties.Clone(), RepositoryItemButtonEdit)
-					UpdateButtons(item, order.Active)
-					e.RepositoryItem = item
+					If order.Active Then
+						e.RepositoryItem = activeRepositoryItemButtonEdit
+					Else
+						e.RepositoryItem = inactiveRepositoryItemButtonEdit
+					End If
 				End If
 			End If
 		End Sub
@@ -118,8 +123,11 @@ Namespace WinSolution.Module.Win
 					unboundModelColumn.Remove()
 				End If
 			End If
-			If defaultButtonColumnColumnProperties IsNot Nothing Then
-				RemoveHandler defaultButtonColumnColumnProperties.Click, AddressOf buttonColumnColumnProperties_Click
+			If activeRepositoryItemButtonEdit IsNot Nothing Then
+				RemoveHandler activeRepositoryItemButtonEdit.Click, AddressOf buttonColumnColumnProperties_Click
+			End If
+			If inactiveRepositoryItemButtonEdit IsNot Nothing Then
+				RemoveHandler inactiveRepositoryItemButtonEdit.Click, AddressOf buttonColumnColumnProperties_Click
 			End If
 			MyBase.OnDeactivated()
 		End Sub
