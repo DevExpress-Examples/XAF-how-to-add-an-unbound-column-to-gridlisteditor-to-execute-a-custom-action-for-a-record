@@ -6,8 +6,8 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [SimpleBusinessActionGridListViewController.cs](CS\EFCore\ButtonInListEF\ButtonInListEF.Win\Controllers\SimpleBusinessActionGridListViewController.cs) 
-* [Order.cs](CS\EFCore\ButtonInListEF\ButtonInListEF.Module\BusinessObjects\Order.cs) 
+* [SimpleBusinessActionGridListViewController.cs](CS/EFCore/ButtonInListEF/ButtonInListEF.Win/Controllers/SimpleBusinessActionGridListViewController.cs) 
+* [Order.cs](CS/EFCore/ButtonInListEF/ButtonInListEF.Module/BusinessObjects/Order.cs) 
 <!-- default file list end -->
 # How to add an unbound column to GridListEditor to execute a custom action for a record
 
