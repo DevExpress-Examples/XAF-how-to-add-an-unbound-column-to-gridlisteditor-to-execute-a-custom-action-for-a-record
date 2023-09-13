@@ -27,6 +27,7 @@ namespace YourSolutionName.Module.BusinessObjects {
 
 <p><strong>See Also:</strong><br /> <a href="https://www.devexpress.com/Support/Center/p/K18108">How to provide an inline Action shown right within the ListView control row on the Web</a><br /> <a href="https://docs.devexpress.com/eXpressAppFramework/113165/getting-started/in-depth-tutorial-winforms-aspnet/extend-functionality/access-grid-control-properties">Access Grid Control Properties</a><br /> <a href="https://docs.devexpress.com/WindowsForms/5633/controls-and-libraries/tree-list/feature-center/data-editing/assigning-editors-to-individual-cells">Assigning Editors to Individual Cells</a><br /> <br /> <a href="https://docs.devexpress.com/eXpressAppFramework/DevExpress.Persistent.Base.ActionAttribute">ActionAttribute Class</a></p>
 
-<br/>
+![ButtonInListEF Win_P73DZ29Ilj](https://github.com/DevExpress-Examples/XAF_how-to-add-an-unbound-column-to-gridlisteditor-to-execute-a-custom-action-for-a-record-e1748/assets/14300209/945f86b8-534f-4d02-aefa-56ad531f3249)
+
 
 
