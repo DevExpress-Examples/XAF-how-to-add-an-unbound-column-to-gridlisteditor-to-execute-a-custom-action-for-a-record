@@ -16,7 +16,7 @@ The following image demonstrates the result:
 1. In the `Order` class, declare a public `SimpleBusinessAction` method to reverse the `Active` property.
 2. Create a new column and configure its editor to add a custom unbound column to [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl). For more information about [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl) customization, refer to the following documentation topic: [Data Grid](https://docs.devexpress.com/WindowsForms/3455/controls-and-libraries/data-grid).
 
-> [!TIP]
+> **Note**  
 > For more information on how to implement an inline Action in an ASP.NET Core Blazor or ASP.NET Web Forms application, refer to the following documentation topic: [How to: Add a Grid Column with an Action (ASP.NET Core Blazor and ASP.NET Web Forms)](https://docs.devexpress.com/eXpressAppFramework/404559/ui-construction/controllers-and-actions/actions/how-to-add-a-grid-column-with-an-action?v=23.2).
 
 ## Files to Review
