@@ -3,9 +3,9 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# XAF - Add an Unbound Column to GridListEditor to Execute a Custom Action for a Record
+# XAF - Add a Command  Column to a GridListEditor (an Unbound Column with a Custom Action)
 
-This example demonstrates how to add a custom unbound column with an Action to [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl) in a List View. When a user clicks the Action button, XAF reverses the boolean value of the `Active` property of the selected `Order` object.
+This example adds an unbound column to the [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl) in a List View. Column cells hold buttons that invoke custom actions. When a user clicks a button, the Action obtains the selected `Order` object and toggles the value of the `Active` property.
 
 The following image demonstrates the result:
 
@@ -13,8 +13,8 @@ The following image demonstrates the result:
 
 ## Implementation Details
 
-1. In the `Order` class, declare a public `SimpleBusinessAction` method to reverse the `Active` property.
-2. Create a new column and configure its editor to add a custom unbound column to [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl). For more information about [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl) customization, refer to the following documentation topic: [Data Grid](https://docs.devexpress.com/WindowsForms/3455/controls-and-libraries/data-grid).
+1. In the `Order` class, declare a public `SimpleBusinessAction` method that toggles the `Active` property.
+2. Create a new unbound column and configure its editor. Add the column to the [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl). For more information about [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl) customization, refer to the following documentation topic: [Data Grid](https://docs.devexpress.com/WindowsForms/3455/controls-and-libraries/data-grid).
 
 > [!TIP]
 > For more information on how to implement an inline Action in an ASP.NET Core Blazor or ASP.NET Web Forms application, refer to the following documentation topic: [How to: Add a Grid Column with an Action (ASP.NET Core Blazor and ASP.NET Web Forms)](https://docs.devexpress.com/eXpressAppFramework/404559/ui-construction/controllers-and-actions/actions/how-to-add-a-grid-column-with-an-action?v=23.2).
