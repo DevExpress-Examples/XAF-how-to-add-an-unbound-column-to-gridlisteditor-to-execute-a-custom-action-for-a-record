@@ -5,7 +5,7 @@
 
 # XAF - Add a Command  Column to a GridListEditor (an Unbound Column with a Custom Action)
 
-This example adds an unbound column to the [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl) in a List View. Column cells hold buttons that invoke custom actions. When a user clicks a button, the Action obtains the selected `Order` object and toggles the value of the `Active` property.
+This example adds an unbound column to the [GridControl](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.GridControl) in a List View. Column cells contain buttons that invoke custom actions. When a user clicks a button, the Action obtains the selected `Order` object and toggles the value of the `Active` property.
 
 The following image demonstrates the result:
 
