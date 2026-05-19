@@ -18,7 +18,6 @@ public class ButtonInListEFWindowsFormsApplication : WinApplication {
 		SplashScreen = new DXSplashScreen(typeof(XafSplashScreen), new DefaultOverlayFormOptions());
         ApplicationName = "ButtonInListEF";
         CheckCompatibilityType = DevExpress.ExpressApp.CheckCompatibilityType.DatabaseSchema;
-        UseOldTemplates = false;
         DatabaseVersionMismatch += ButtonInListEFWindowsFormsApplication_DatabaseVersionMismatch;
         CustomizeLanguagesList += ButtonInListEFWindowsFormsApplication_CustomizeLanguagesList;
     }
